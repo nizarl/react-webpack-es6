@@ -1,0 +1,7 @@
+body{
+    background-color:whitesmoke;
+}
+.body {
+    //color: yellow;   
+    &__p--blue { color: blue;font-size: 2rem;}
+}
