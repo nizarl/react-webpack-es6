@@ -6,19 +6,15 @@ import ReactDOM from 'react-dom';
 
 var moment = require('moment');
 var _ = require('underscore');
-var now = moment().format();
-import keyIndex from 'react-key-index';
-
 
 const Orders = props => {
-    var OrdersWithKeys = keyIndex(props.ordersData, 1)
   return (
     <div id="ordersDiv">
       <div className="b-card b-orders-card">
         <div
           id="orders-container"
           className="b-card__header b-orders-card__header--orange">
-          <span className="b-card__header-title">Orders</span>
+          <span className="b-card__header-title">Orders <span style={divStyle} className="fa fa-chevron-up pull-right"></span> </span>
           <a
             href="#"
             data-toggle="collapse"
@@ -40,13 +36,13 @@ const Orders = props => {
                 </tr>
               </thead>
               <tbody className="b-table__tbody">
-                   {OrdersWithKeys.map((c, index) => (
-                    <tr key={index}>
+                   {props.ordersData.map((c, index) => (
+                    <tr className="b-table__tr" key={index}>
                     <td>{c.description}</td>
                     <td>{c.date}</td>
-                    <td>{c.administeredDate}</td>
-                    {c.source ? <td>{c.source.name.map(x => (<div key={x.given}>{x.given} {x.family}</div>
-                        ))}</td>: <td></td>}
+                    <td className={(c.administeredDate ? '' : 'empty-orders-cell')}>{c.administeredDate}</td>
+                    {c.source ? <td>{c.source.name.map((x,index) => (<div key={index}>{x.given} {x.family}</div>
+                        ))}</td>: <td className="empty-orders-cell"></td>}
                     <td>{c.status}</td>
                     </tr>
                     ))}
@@ -65,5 +61,11 @@ const Orders = props => {
     </div>
   );
 }
+
+var divStyle = {
+  color: '#005491',
+  padding: '0px 18px 0px 0px',
+  fontSize: '16px'
+};
 
 module.exports = Orders;

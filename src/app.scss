@@ -1,7 +1,87 @@
-body{
-    background-color:whitesmoke;
-}
-.body {
-    //color: yellow;   
-    &__p--blue { color: blue;font-size: 2rem;}
-}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
+
+html { line-height: 1; }
+
+ol, ul { list-style: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
+
+q, blockquote { quotes: none; }
+q:before, q:after, blockquote:before, blockquote:after { content: ""; content: none; }
+
+a img { border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
+
+html * { vertical-align: middle; }
+
+body { padding-top: 0px; font-size: 12px; margin: 0px 0px; height: 100% !important; position: relative !important; font-family: "Roboto Regular", "helvtica", Arial; }
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */ color: #000000 !important; }
+
+::-moz-placeholder { /* Firefox 19+ */ color: #000000 !important; }
+
+:-ms-input-placeholder { /* IE 10+ */ color: #000000 !important; }
+
+:-moz-placeholder { /* Firefox 18- */ color: #000000 !important; }
+
+tr { border: 1px solid #ccc; }
+
+td { border: none; position: relative; padding-left: 50%; }
+
+.b-table > tbody > tr > td, .b-table > tbody > tr > th, .b-table > tfoot > tr > td, .b-table > tfoot > tr > th, .b-table > thead > tr > td, .b-table > thead > tr > th { border: none; }
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th { padding-left: 22px; }
+
+.b-table { border-collapse: inherit; }
+.b-table__th { color: #49708A; font-size: 13px; font-weight: bold; background-color: #FFFFFF; }
+
+@media (min-width: 768px) { .b-table__th--hidden { display: none; }
+  .b-table__td--hidden { display: none; } }
+@media (min-device-width: 320px) and (max-device-width: 1024px) { .b-table { border-collapse: inherit; }
+  .b-table__thead { display: block; position: absolute; top: -9999px; left: -9999px; }
+  .b-table__thead--hidden { display: block; text-align: right; }
+  .b-table__th { display: block; color: #49708A; font-size: 13px; font-weight: bold; background-color: #FFFFFF; }
+  .b-table__tbody { display: block; }
+  .b-table__tr { display: block; top: -9999px; left: -9999px; border: 1px solid #ccc; }
+  .b-table__td { display: block; border: none; border-bottom: 1px solid #eee; position: relative; padding-left: 50%; }
+  .b-table__td--hidden { display: block; text-align: right; } }
+.b-card { width: 100%; margin: 1rem 0 1rem 0; background-color: #F9F9F9; border-radius: 2px; border: 0px; }
+.b-card__header { display: block; background-color: #EAEAEA; border-radius: 5px 5px 0 0; padding-left: 22px; height: 45px; padding-top: 15px; padding-bottom: 14px; height: 45px; }
+.b-card__header-title { width: 51px; height: 16px; font-size: 25px; line-height: 17px; }
+.b-card__header-arrow { color: #005491 !important; margin-right: 20px; float: right; }
+.b-card__body { color: #666; display: block; }
+
+strong { font-weight: bold; }
+
+@font-face { font-family: Roboto Black; src: url(/fonts/Roboto-Black.ttf) format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: Roboto Black Italic; src: url(/fonts/Roboto-BlackItalic.ttf) format("truetype"); font-weight: normal; font-style: italic; }
+@font-face { font-family: Roboto Bold; src: url(/fonts/Roboto-Bold.ttf) format("truetype"); font-weight: bold; font-style: normal; }
+@font-face { font-family: Roboto Medium Bold; src: url(/fonts/Roboto-Bold.ttf) format("truetype"); font-weight: 500; font-style: normal; }
+@font-face { font-family: Roboto Bold Italic; src: url(/fonts/Roboto-BoldItalic.ttf) format("truetype"); font-weight: bold; font-style: italic; }
+@font-face { font-family: Roboto Italic; src: url(/fonts/Roboto-Italic.ttf) format("truetype"); font-weight: normal; font-style: italic; }
+@font-face { font-family: Roboto Light; src: url(/fonts/Roboto-Light.ttf) format("truetype"); font-weight: 100; font-style: normal; }
+@font-face { font-family: Roboto Light Italic; src: url(/fonts/Roboto-LightItalic.ttf) format("truetype"); font-weight: 100; font-style: italic; }
+@font-face { font-family: Roboto Medium; src: url(/fonts/Roboto-Medium.ttf) format("truetype"); font-weight: 300; font-style: normal; }
+@font-face { font-family: Roboto Medium Italic; src: url(/fonts/Roboto-MediumItalic.ttf) format("truetype"); font-weight: 300; font-style: italic; }
+//@font-face { font-family: Roboto Regular; src: url(/fonts/Roboto-Regular.ttf) format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: Roboto Thin; src: url(/fonts/Roboto-Thin.ttf) format("truetype"); font-weight: 600; font-style: normal; }
+@font-face { font-family: Roboto Thin Italic; src: url(/fonts/Roboto-ThinItalic.tff) format("truetype"); font-weight: 200; font-style: italic; }
+
+.b-orders-card { display: block; }
+.b-orders-card__header--orange { border-bottom: solid #E6761C !important; color: #E6761C !important; }
+
+.empty-orders-cell { background-color: #e5e5e5; }
+
+@media (min-device-width: 320px) and (max-device-width: 1024px) { .table-orders td:nth-of-type(1):before { content: ""; }
+  .table-orders td:nth-of-type(2):before { content: "Description: "; }
+  .table-orders td:nth-of-type(3):before { content: "Order Date: "; }
+  .table-orders td:nth-of-type(4):before { content: "Performed Date: "; }
+  .table-orders td:nth-of-type(5):before { content: "Ordered By: "; }
+  .table-orders td:nth-of-type(6):before { content: "Status: "; }
+  .table-orders td:nth-of-type(7):before { content: "Reason:"; }
+  .table-orders td.empty-orders-cell { display: none; } }
