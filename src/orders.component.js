@@ -1,6 +1,5 @@
 const css = require('./app.scss');
 import jsonData from './mock.json';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 
