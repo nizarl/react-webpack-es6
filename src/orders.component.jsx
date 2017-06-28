@@ -1,10 +1,6 @@
-const css = require('./app.scss');
-import jsonData from './mock.json';
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-var moment = require('moment');
-var _ = require('underscore');
+import css from './app.scss';
 
 const Orders = props => {
   return (

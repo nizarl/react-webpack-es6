@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 
 var moment = require('moment');
 var _ = require('underscore');
-var now = moment().format();
 
 export const getOrders = function (url) {
     return fetch(url);

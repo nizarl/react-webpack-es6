@@ -1,15 +1,9 @@
-const css = require('./app.scss');
-import jsonData from './mock.json';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-var moment = require('moment');
-var _ = require('underscore');
-var now = moment().format();
-
 import {getOrders, assembleOrders} from './helpers/fetch-build.orders.js'
 import Orders from './orders.component.jsx'
+
+const css = require('./app.scss');
 
 class Container extends React.Component {
   constructor(props) {
@@ -22,8 +16,7 @@ class Container extends React.Component {
   componentDidMount() {
     const url = 'https://patientsummary-app-int.chenmed.local/PatientSummaryService/patientSummary/orderSummary/26669';
     getOrders(url).then((resp) => {
-      resp
-        .json()
+      resp.json()
         .then(ret => {
           var patientOrders = assembleOrders(ret);
           this.setState({ordersData: patientOrders});
@@ -32,6 +25,15 @@ class Container extends React.Component {
   }
   render() {
     if (this.state.ordersData.length > 1) {
+        console.log('ordersData array length:',this.state.ordersData.length)
+
+      // if (this.state.ordersData.length < 50) {
+      //   setTimeout(() => {
+      //     var arr = this.state.ordersData.concat(this.state.ordersData);
+      //     this.setState({ordersData: arr});
+      //   }, 4000)
+      // }
+
       return <Orders ordersData={this.state.ordersData}/>;
     }
     return <div>Loading...</div>;
