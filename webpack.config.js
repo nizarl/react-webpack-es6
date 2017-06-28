@@ -5,7 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 
 module.exports = {
-    entry: './src/app.js',
+    entry: './src/app.jsx',
     output: {
         path: path.join(__dirname, 'dist'),
         filename: '[name].bundle.js'
@@ -15,9 +15,18 @@ module.exports = {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader'],
+                    use: [
+                        'css-loader', 'sass-loader'
+                    ],
                     publicPath: '/dist'
                 })
+            }, {
+                test: /\.jsx$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+                query: {
+                    presets: ['react']
+                }
             },
             {
                 test: /\.js$/,
@@ -27,7 +36,7 @@ module.exports = {
             {
                 test: /\.(woff|woff2|eot|ttf|svg)$/,
                 exclude: /node_modules/,
-                loader: 'url-loader?limit=3024&name=fonts/[name].[ext]'
+                use: 'url-loader?limit=3024&name=fonts/[name].[ext]'
             }
         ]
     },

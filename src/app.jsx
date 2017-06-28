@@ -9,7 +9,7 @@ var _ = require('underscore');
 var now = moment().format();
 
 import {getOrders, assembleOrders} from './helpers/fetch-build.orders.js'
-import Orders from './orders.component.js'
+import Orders from './orders.component.jsx'
 
 class Container extends React.Component {
   constructor(props) {

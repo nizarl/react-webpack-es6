@@ -13,7 +13,7 @@ const Orders = props => {
         <div
           id="orders-container"
           className="b-card__header b-orders-card__header--orange">
-          <span className="b-card__header-title">Orders <span style={divStyle} className="fa fa-chevron-up pull-right"></span> </span>
+          <span className="b-card__header-title">Orders <span style={emptySpan} className="fa fa-chevron-up pull-right"></span> </span>
           <a
             href="#"
             data-toggle="collapse"
@@ -61,7 +61,7 @@ const Orders = props => {
   );
 }
 
-var divStyle = {
+var emptySpan = {
   color: '#005491',
   padding: '0px 18px 0px 0px',
   fontSize: '16px'
