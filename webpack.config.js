@@ -21,17 +21,12 @@ module.exports = {
                     publicPath: '/dist'
                 })
             }, {
-                test: /\.jsx$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {
                     presets: ['react']
                 }
-            },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: 'babel-loader'
             },
             {
                 test: /\.(woff|woff2|eot|ttf|svg)$/,
