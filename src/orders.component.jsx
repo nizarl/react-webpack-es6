@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types'
 import css from './app.scss';
 
 const Orders = props => {
@@ -9,7 +10,9 @@ const Orders = props => {
         <div
           id="orders-container"
           className="b-card__header b-orders-card__header--orange">
-          <span className="b-card__header-title">Orders <span style={emptySpan} className="fa fa-chevron-up pull-right"></span> </span>
+          <span className="b-card__header-title">Orders
+            <span style={emptySpan} className="fa fa-chevron-up pull-right"></span>
+          </span>
           <a
             href="#"
             data-toggle="collapse"
@@ -31,23 +34,27 @@ const Orders = props => {
                 </tr>
               </thead>
               <tbody className="b-table__tbody">
-                   {props.ordersData.map((c, index) => (
+                {props
+                  .ordersData
+                  .map((c, index) => (
                     <tr className="b-table__tr" key={index}>
-                    <td>{c.description}</td>
-                    <td>{c.date}</td>
-                    <td className={(c.administeredDate ? '' : 'empty-orders-cell')}>{c.administeredDate}</td>
-                    {c.source ? <td>{c.source.name.map((x,index) => (<div key={index}>{x.given} {x.family}</div>
-                        ))}</td>: <td className="empty-orders-cell"></td>}
-                    <td>{c.status}</td>
+                      <td>{c.description}</td>
+                      <td>{c.date}</td>
+                      <td
+                        className={(c.administeredDate
+                        ? ''
+                        : 'empty-orders-cell')}>{c.administeredDate}</td>
+                      {c.source
+                        ? <td>{c
+                              .source
+                              .name
+                              .map((x, index) => (
+                                <div key={index}>{x.given} {x.family}</div>
+                              ))}</td>
+                        : <td className="empty-orders-cell"></td>}
+                      <td>{c.status}</td>
                     </tr>
-                    ))}
-                {/*<tr className="b-table__tr">
-                  <td className="b-table__td--hidden"></td>
-                  <td className="b-table__td"></td>
-                  <td className="b-table__td"></td>
-                  <td className="b-table__td"></td>
-                  <td className="b-table__td"></td>
-                </tr>*/}
+                  ))}
               </tbody>
             </table>
           </div>
@@ -55,6 +62,19 @@ const Orders = props => {
       </div>
     </div>
   );
+}
+
+Orders.propTypes = {
+  ordersData: PropTypes
+    .arrayOf(PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    identifier: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+    source: PropTypes.shape({
+      //todo: add object props.
+    }).isRequired
+  })).isRequired
 }
 
 var emptySpan = {

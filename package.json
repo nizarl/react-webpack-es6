@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "moment": "^2.18.1",
+    "prop-types": "^15.5.10",
     "react-fontawesome": "^1.6.1",
     "underscore": "^1.8.3"
   }
