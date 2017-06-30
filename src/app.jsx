@@ -25,15 +25,15 @@ class Container extends React.Component {
   }
   render() {
     if (this.state.ordersData.length > 1) {
-        console.log('ordersData array length:',this.state.ordersData.length)
+        console.log('ordersData array length:', this.state.ordersData.length)
 
-      // For example only: state update.
-      // if (this.state.ordersData.length < 50) {
-      //   setTimeout(() => {
-      //     var arr = this.state.ordersData.concat(this.state.ordersData);
-      //     this.setState({ordersData: arr});
-      //   }, 4000)
-      // }
+      //For example only: state update.
+      if (this.state.ordersData.length < 50) {
+        setTimeout(() => {
+          var arr = this.state.ordersData.concat(this.state.ordersData);
+          this.setState({ordersData: arr});
+        }, 4000)
+      }
 
       return <Orders ordersData={this.state.ordersData} />;
     }
