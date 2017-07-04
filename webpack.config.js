@@ -10,6 +10,9 @@ module.exports = {
         path: path.join(__dirname, 'dist'),
         filename: '[name].bundle.js'
     },
+     resolve: {
+    extensions: [ '.js', '.jsx', '.json']
+  },
     module: {
         rules: [{
                 test: /\.scss$/,
@@ -23,6 +26,8 @@ module.exports = {
             }, {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
+                //include: [/node_modules\/reactpatientorders/],
+                include: [__dirname + "/src/",/node_modules\/reactpatientorders/],
                 loader: 'babel-loader',
                 query: {
                     presets: ['react']

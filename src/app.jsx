@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {getOrders, assembleOrders} from './helpers/fetch-build.orders.js'
 import temp from './helpers/es6.tests.js'
-import Orders from './orders.component.jsx'
+import Orders from 'reactpatientorders';
 
 const css = require('./app.scss');
 
